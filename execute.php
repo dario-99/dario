@@ -22,7 +22,7 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif(substr($text,0,6)=="insulta")
+elseif(substr($text,0,7)=="insulta")
 {
 	$response = "Ciao $firstname, benvenuto!";
 	//$response = substr($text,8,strlen($text)-1)." sei un coglione!!";
