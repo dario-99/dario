@@ -17,22 +17,16 @@ $text = trim($text);
 $text = strtolower($text);
 header("Content-Type: application/json");
 $response = '';
+
 if(strpos($text, "/start") === 0 || $text=="ciao")
 {
 	$response = "Ciao $firstname, benvenuto!";
 }
-elseif($text=="domanda 1")
+elseif(substr($text,0,6)=="insulta")
 {
-	$response = "risposta 1";
+	$response = substr($text,8,strlen($text)-1)." sei un coglione!!";
 }
-elseif($text=="domanda 2")
-{
-	$response = "risposta 2";
-}
-else
-{
-	$response = "Comando non valido!";
-}
+
 $parameters = array('chat_id' => $chatId, "text" => $response);
 $parameters["method"] = "sendMessage";
 echo json_encode($parameters);
