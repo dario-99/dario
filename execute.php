@@ -24,8 +24,7 @@ if(strpos($text, "/start") === 0 || $text=="ciao")
 }
 elseif(substr($text,0,7)=="insulta")
 {
-	$response = "Ciao $firstname, benvenuto!";
-	//$response = substr($text,8,strlen($text)-1)." sei un coglione!!";
+	$response = substr($text,8,strlen($text)-1)." sei un coglione!!";
 }
 
 $parameters = array('chat_id' => $chatId, "text" => $response);
